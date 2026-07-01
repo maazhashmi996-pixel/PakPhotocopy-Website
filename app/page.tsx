@@ -2,7 +2,7 @@
 import React from 'react';
 import { motion, Variants } from 'framer-motion';
 import Link from 'next/link';
-import { ArrowRight, ShieldCheck, Zap, Award, CheckCircle2, MapPin } from 'lucide-react';
+import { ArrowRight, ShieldCheck, Zap, Award, CheckCircle2, MapPin, History, UserCheck, Star } from 'lucide-react';
 
 export default function HomePage() {
   const containerVariants: Variants = {
@@ -69,6 +69,95 @@ export default function HomePage() {
       </section>
 
       <hr className="border-neutral-200/60 max-w-7xl mx-auto" />
+
+      {/* 📜 Pak Photocopy Legacy (Since 1997) */}
+      <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="bg-white border border-neutral-100 rounded-3xl p-8 lg:p-14 shadow-xl grid grid-cols-1 md:grid-cols-12 gap-10 items-center">
+          {/* Left Side: Large PNG Logo */}
+          <div className="md:col-span-4 flex justify-center">
+            <motion.div
+              whileHover={{ scale: 1.03, rotate: 1 }}
+              className="relative w-56 h-56 bg-slate-50 border border-neutral-200/60 p-6 rounded-2xl flex items-center justify-center shadow-inner group"
+            >
+              <img
+                src="/logo.png"
+                alt="Pak Photocopy Established 1997 Logo"
+                className="w-full h-full object-contain filter drop-shadow-md group-hover:brightness-110 transition-all"
+                onError={(e) => { e.currentTarget.src = "https://placehold.co/200?text=Pak+Photocopy"; }}
+              />
+            </motion.div>
+          </div>
+
+          {/* Right Side: Professional Legacy Details */}
+          <div className="md:col-span-8 space-y-4">
+            <div className="flex items-center gap-2 text-amber-600 font-bold text-xs tracking-widest uppercase">
+              <History className="w-4 h-4" /> Est. 1997 — Three Decades of Excellence
+            </div>
+            <h2 className="text-3xl font-black text-neutral-900 tracking-tight sm:text-4xl">
+              Serving with Immaculate Document Solutions Since 1997
+            </h2>
+            <p className="text-sm text-neutral-600 leading-relaxed">
+              Established in 1997, Pak Photocopy has evolved from a pioneering local copy shop into Lahore's premier high-end digital duplication hub. For nearly three decades, we have remained deeply committed to supplying flawless double-sided laser printing, wholesale high-brightness paper rims, and intricate structural map plotting. Our longevity is a testament to our unrelenting pursuit of absolute paper quality and rapid turnaround times.
+            </p>
+            <div className="flex gap-6 pt-2">
+              <div>
+                <p className="font-black text-neutral-950 text-xl">29+</p>
+                <p className="text-[10px] uppercase font-bold text-neutral-400">Years Experience</p>
+              </div>
+              <div className="w-px h-8 bg-neutral-200 self-center" />
+              <div>
+                <p className="font-black text-neutral-950 text-xl">100%</p>
+                <p className="text-[10px] uppercase font-bold text-neutral-400">Jam-Free Guarantee</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 👑 CEO Dawood Gee Profile Block */}
+      <section className="pb-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="bg-gradient-to-br from-neutral-50 to-neutral-100/70 border border-neutral-200/50 rounded-3xl p-8 lg:p-14 shadow-md grid grid-cols-1 md:grid-cols-12 gap-10 items-center">
+          {/* Left Side: Bio & Credentials */}
+          <div className="md:col-span-7 space-y-4 order-2 md:order-1">
+            <div className="flex items-center gap-2 text-amber-600 font-bold text-xs tracking-widest uppercase">
+              <UserCheck className="w-4 h-4" /> Corporate Leadership
+            </div>
+            <div className="space-y-1">
+              <h2 className="text-3xl font-black text-neutral-900 tracking-tight">Dawood Gee</h2>
+              <p className="text-xs font-extrabold text-neutral-500 uppercase tracking-wider">Founder & Chief Executive Officer</p>
+            </div>
+            <p className="text-sm text-neutral-600 italic leading-relaxed">
+              "At Pak Photocopy, we don't just transfer ink to paper; we secure and deliver your critical intellectual property, business blue-prints, and academic milestones. Since anchoring this facility in 1997, my philosophy has been clear: maintain VIP grade heavy machinery, foster direct logistics integrations like MNP, and never compromise on a client's trust."
+            </p>
+            <div className="pt-2 flex items-center gap-2">
+              <div className="flex text-amber-500">
+                <Star className="w-4 h-4 fill-current" />
+                <Star className="w-4 h-4 fill-current" />
+                <Star className="w-4 h-4 fill-current" />
+                <Star className="w-4 h-4 fill-current" />
+                <Star className="w-4 h-4 fill-current" />
+              </div>
+              <span className="text-xs font-mono text-neutral-400">— Executive Signature Line</span>
+            </div>
+          </div>
+
+          {/* Right Side: Enhanced Large & Colorful CEO Picture Asset */}
+          <div className="md:col-span-5 flex justify-center order-1 md:order-2">
+            <motion.div
+              whileHover={{ y: -4 }}
+              className="relative w-full max-w-[320px] h-80 md:h-[380px] bg-neutral-900 rounded-2xl overflow-hidden shadow-xl border-4 border-white"
+            >
+              <img
+                src="/2.jpg"
+                alt="Dawood Gee - CEO Pak Photocopy"
+                className="w-full h-full object-cover object-top transition-all duration-500"
+                onError={(e) => { e.currentTarget.src = "https://placehold.co/350x450?text=Dawood+Gee+CEO"; }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/40 via-transparent to-transparent flex items-end p-3" />
+            </motion.div>
+          </div>
+        </div>
+      </section>
 
       {/* MNP In-house Integration Segment */}
       <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

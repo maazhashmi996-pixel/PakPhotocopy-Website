@@ -22,7 +22,7 @@ export const servicesData: ServiceItem[] = [
         title: 'Wedding Cards Designing & Printing',
         description: 'Premium luxury wedding cards with gold foil and embossing.',
         price: 'Starting from Rs. 80 / card',
-        image: 'https://images.unsplash.com/photo-1607344645866-009c320c5ab8?q=80&w=600',
+        image: '/cards.png',
         category: 'specialized'
     },
     {
@@ -78,7 +78,7 @@ export const servicesData: ServiceItem[] = [
         title: 'Flex & Large Format Printing',
         description: 'High-quality outdoor banners, panaflex, and vinyl printing.',
         price: 'Rs. 40 / sq.ft',
-        image: 'https://images.unsplash.com/photo-1561070791-26c113006238?q=80&w=600',
+        image: '/flex.png',
         category: 'printing'
     },
     {
@@ -94,7 +94,7 @@ export const servicesData: ServiceItem[] = [
         title: 'PVC Smart Cards',
         description: 'Employee IDs, student cards, and visitor passes printing.',
         price: 'Rs. 120 / card',
-        image: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=600',
+        image: '/PVC.png',
         category: 'specialized'
     }
 ];
@@ -105,7 +105,7 @@ export const productsData: ProductItem[] = [
         name: 'A4 Size Paper Rim (80 Gram)',
         specification: 'Premium Double A / Passport quality, 500 sheets.',
         price: 'Rs. 1,450 / Rim',
-        image: 'https://images.unsplash.com/photo-1603484477859-abe6a73f9366?q=80&w=600',
+        image: 'a4.png',
         category: 'paper'
     },
     {
@@ -113,7 +113,7 @@ export const productsData: ProductItem[] = [
         name: 'A4 Size Paper Rim (100 Gram)',
         specification: 'Ultra white heavy paper, ideal for thesis & resumes.',
         price: 'Rs. 1,950 / Rim',
-        image: 'https://images.unsplash.com/photo-1586075010923-2dd4570fb338?q=80&w=600',
+        image: 'a4-100.png',
         category: 'paper'
     },
     {
@@ -121,7 +121,7 @@ export const productsData: ProductItem[] = [
         name: 'A3 Size Paper Rim (80 Gram)',
         specification: 'Large format engineering blueprint & ledger sheets.',
         price: 'Rs. 2,900 / Rim',
-        image: 'https://images.unsplash.com/photo-1596495578065-6e0763fa1141?q=80&w=600',
+        image: 'A3.png',
         category: 'paper'
     },
     {
@@ -129,7 +129,7 @@ export const productsData: ProductItem[] = [
         name: 'A3 Size Paper Rim (100 Gram)',
         specification: 'Premium heavy weight large format presentation sheets.',
         price: 'Rs. 3,800 / Rim',
-        image: 'https://images.unsplash.com/photo-1517842645767-c639042777db?q=80&w=600',
+        image: 'A3-100.png',
         category: 'paper'
     },
     {
@@ -137,7 +137,7 @@ export const productsData: ProductItem[] = [
         name: 'Rubber & Laser Stamps',
         specification: 'Automatic self-inking stamps with custom vector engraving.',
         price: 'Starting from Rs. 450',
-        image: 'https://images.unsplash.com/photo-1516962215378-7fa2e137ae93?q=80&w=600',
+        image: '/stamp.png',
         category: 'stamps'
     },
     {
