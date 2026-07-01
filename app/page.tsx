@@ -148,7 +148,7 @@ export default function HomePage() {
               className="relative w-full max-w-[320px] h-80 md:h-[380px] bg-neutral-900 rounded-2xl overflow-hidden shadow-xl border-4 border-white"
             >
               <img
-                src="/2.jpg"
+                src="/11.jpeg"
                 alt="Dawood Gee - CEO Pak Photocopy"
                 className="w-full h-full object-cover object-top transition-all duration-500"
                 onError={(e) => { e.currentTarget.src = "https://placehold.co/350x450?text=Dawood+Gee+CEO"; }}
