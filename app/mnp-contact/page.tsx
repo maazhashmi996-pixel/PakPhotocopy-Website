@@ -1,6 +1,6 @@
 'use client';
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Truck, MapPin, Phone, Clock } from 'lucide-react';
 
 export default function MnpContactPage() {
@@ -9,6 +9,7 @@ export default function MnpContactPage() {
         fullName: '',
         phone: '',
         service: 'Bulk Book Printing & Fast Track Delivery',
+        customService: '', // ادر سروس کے لیے نئی اسٹیٹ
         city: '',
         instructions: ''
     });
@@ -29,11 +30,20 @@ export default function MnpContactPage() {
             return;
         }
 
+        // اگر Other سلیکٹڈ ہو اور کسٹم سروس خالی ہو
+        if (formData.service === 'Other' && !formData.customService.trim()) {
+            alert("Please specify your custom service requirement.");
+            return;
+        }
+
+        // فائنل سروس ٹیکسٹ کا تعین
+        const finalService = formData.service === 'Other' ? `Other (${formData.customService})` : formData.service;
+
         // واٹس ایپ میسج کا پریمیم فارمیٹ
         const message = `*🌟 NEW PRINTING & CARGO ORDER 🌟* \n\n` +
             `*👤 Client Name:* ${formData.fullName}\n` +
             `*📞 Phone:* ${formData.phone}\n` +
-            `*🛠️ Service:* ${formData.service}\n` +
+            `*🛠️ Service:* ${finalService}\n` +
             `*📍 Destination City:* ${formData.city || 'N/A'}\n\n` +
             `*📝 Custom Instructions:* \n${formData.instructions || 'No extra instructions provided.'}\n\n` +
             `_Sent via Pak Photocopy Digital Portal_`;
@@ -156,8 +166,32 @@ export default function MnpContactPage() {
                                         <option>Large Map Plotting (42 Inches Scanning)</option>
                                         <option>Paper Rims Wholesale Order</option>
                                         <option>Urdu/English Composing & PVC Intelligent Cards</option>
+                                        <option value="Other">Other (Please Specify)</option>
                                     </select>
                                 </div>
+
+                                {/* کسٹم کیٹیگری ان پٹ باکس کی اینیمیشن */}
+                                <AnimatePresence>
+                                    {formData.service === 'Other' && (
+                                        <motion.div
+                                            initial={{ opacity: 0, height: 0 }}
+                                            animate={{ opacity: 1, height: 'auto' }}
+                                            exit={{ opacity: 0, height: 0 }}
+                                            className="space-y-1 overflow-hidden"
+                                        >
+                                            <label className="text-xs font-bold text-amber-600">Specify Your Service / Category</label>
+                                            <input
+                                                type="text"
+                                                name="customService"
+                                                value={formData.customService}
+                                                onChange={handleChange}
+                                                placeholder="e.g. Flex Printing, Laser Engraving, Wedding Cards Setup..."
+                                                className="w-full bg-amber-50/30 border border-amber-200 focus:border-neutral-900 focus:bg-white p-3.5 rounded-xl text-sm outline-none transition-all"
+                                                required={formData.service === 'Other'}
+                                            />
+                                        </motion.div>
+                                    )}
+                                </AnimatePresence>
 
                                 <div className="space-y-1">
                                     <label className="text-xs font-bold text-neutral-600">Destination City (For MNP Cargo Setup)</label>
